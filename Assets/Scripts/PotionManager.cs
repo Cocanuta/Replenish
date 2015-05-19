@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class PotionManager : MonoBehaviour {
 
-	public List<Potion> Potions = new List<Potion>();
+	public List<Potion> potions = new List<Potion>();
 	// Use this for initialization
 	void Start () {
 	
