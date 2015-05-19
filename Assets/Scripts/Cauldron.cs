@@ -11,14 +11,18 @@ public class Cauldron : MonoBehaviour {
 	public Potion cauldronPotion;		//Type of potion in the cauldron.
 	public Materials cauldronMats;		//Materials that can be in the cauldron.
 
+	public enum Liquid { none };
+	public enum Potion { none };
+	public enum Materials { none };
+
 	// Use this for initialization
 	void Start () {
 	//Set up the empty cauldron with the default size of 30L,
 		cauldronSize = 30000.0f;
 		cauldronLevel = 0.0f;
-		cauldronLiquid = Liquid.none; 		//May need changed once liquid constructor is created 
-		cauldronMats = Materials.none;		//May need changed once material constructor is created
-		cauldronPotion = Potion.none;		//May need changed once potion constructor is created 	
+		cauldronLiquid = Liquid.none;
+		cauldronMats = Materials.none;
+		cauldronPotion = Potion.none; 	
 	}
 	
 	// Update is called once per frame
