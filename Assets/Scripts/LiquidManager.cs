@@ -8,9 +8,12 @@ public class LiquidManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		AddNewLiquid ("None");
 		AddNewLiquid ("Water");
-		AddNewLiquid ("Urine");
-		AddNewLiquid ("Liquid Poop");
+		AddNewLiquid ("Oil");
+		AddNewLiquid ("Sludge");
+		AddNewLiquid ("Blood");
+		AddNewLiquid ("Milk");
 	
 	}
 	
