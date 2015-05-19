@@ -64,7 +64,7 @@ public class Bucket : MonoBehaviour {
 	void fillBucket(float amount, Liquid liquid)
 	{
 		// If the amount is bigger than the amount left in the bucket, fill thr bucket completely.
-		if (amount >= bucketAmount - bucketFill)
+		if (amount >= bucketSize - bucketFill)
 		{
 			fillBucket(liquid);
 		}
