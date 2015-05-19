@@ -6,6 +6,7 @@ public class Bucket : MonoBehaviour {
 	public float bucketSize;	// The size of the bucket.
 	public float bucketFill; 	// How full the bucket is.
 	public Liquid bucketLiquid;	// What is in the bucket.
+	public bool isUnderDrip;	// Is the bucket underneath a drip.
 
 	// The types of liquid.
 	public enum Liquid { none, water, sludge };
@@ -20,7 +21,10 @@ public class Bucket : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (isUnderDrip)
+		{
+			fillBucket(0.01f,Liquid.water);
+		}
 	}
 
 	// Empties the bucket completely.
