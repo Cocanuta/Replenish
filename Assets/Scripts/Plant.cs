@@ -28,7 +28,6 @@ public class Plant : MonoBehaviour {
 		plantElements.Add(Elements.water);
 		plantElements.Add(Elements.light);
 		plantGrowth = 5;
-		plantGrowthLevel = 4;
 		heatLevel = 1;
 		waterLevel = 1;
 		lightLevel = 1;
@@ -36,38 +35,74 @@ public class Plant : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		calculateGrowthLevel();
 		growth();
 	}
 
 	// Calculates the growth level.
 	public void calculateGrowthLevel()
 	{
+		int count = 0;
+		int check = 0;
 
+		foreach (Elements element in plantElements)
+		{
+			if (element.Equals(Elements.heat))
+			{
+				count ++;
+			}
+		}
+		if (count.Equals(heatLevel))
+		{
+			check++;
+		}
+
+		count = 0;
+		foreach (Elements element in plantElements)
+		{
+			if (element.Equals(Elements.water))
+			{
+				count ++;
+			}
+		}
+		if (count.Equals(waterLevel))
+		{
+			check++;
+		}
+
+		count = 0;
+		foreach (Elements element in plantElements)
+		{
+			if (element.Equals(Elements.light))
+			{
+				count ++;
+			}
+		}
+		if (count.Equals(lightLevel))
+		{
+			check++;
+		}
+
+		plantGrowthLevel = check;
 	}
 
 	// Adjusts the plants growth based on growth level.
 	public void growth()
 	{
-		if (plantGrowthLevel.Equals(0)) // Optimal wilting.
-		{
-			alterGrowth(-0.02f);
-		}
-		if (plantGrowthLevel.Equals(1)) // Wilting
+		if (plantGrowthLevel.Equals(0)) // Wilting.
 		{
 			alterGrowth(-0.01f);
 		}
-		if (plantGrowthLevel.Equals(2)) // Neutral.
+		if (plantGrowthLevel.Equals(1)) // Neutral
 		{
-			
 		}
-		if (plantGrowthLevel.Equals(3)) // Growth.
+		if (plantGrowthLevel.Equals(2)) // Growth.
 		{
 			alterGrowth(0.01f);
 		}
-		if (plantGrowthLevel.Equals(4)) // Optimal growth.
+		if (plantGrowthLevel.Equals(3)) // Optimal Growth.
 		{
 			alterGrowth(0.02f);
-			
 		}
 	}
 
