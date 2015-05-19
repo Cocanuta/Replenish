@@ -23,7 +23,7 @@ public class Bucket : MonoBehaviour {
 	void Update () {
 		if (isUnderDrip)
 		{
-			fillBucket(0.01f,Liquid.water);
+			fillBucket(0.1f,Liquid.water);
 		}
 	}
 
