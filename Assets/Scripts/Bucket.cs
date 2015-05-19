@@ -27,6 +27,17 @@ public class Bucket : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerEnter(Collider col)
+	{
+		if (col.name == "Drip") {
+			isUnderDrip = true;
+		}
+	}
+	void OnTriggerExit(Collider col)
+	{
+		isUnderDrip = false;
+	}
+
 	// Empties the bucket completely.
 	void emptyBucket()
 	{
