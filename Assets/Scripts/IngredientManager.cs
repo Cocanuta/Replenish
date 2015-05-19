@@ -8,7 +8,12 @@ public class IngredientManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		AddNewIngredient ("None");
+		AddNewIngredient ("Leaf");
+		AddNewIngredient ("Thorn");
+		AddNewIngredient ("Berry");
+		AddNewIngredient ("Strawberry");
+		AddNewIngredient ("Rats Tail");
+
 	
 	}
 	
