@@ -11,9 +11,9 @@ public class Cauldron : MonoBehaviour {
 	public Potion cauldronPotion;		//Type of potion in the cauldron.
 	public Materials cauldronMats;		//Materials that can be in the cauldron.
 
-	public enum Liquid { none };
-	public enum Potion { none };
-	public enum Materials { none };
+	public enum Liquid { none, water };
+	public enum Potion { none, health };
+	public enum Materials { none, plant };
 
 	// Use this for initialization
 	void Start () {
@@ -35,7 +35,7 @@ public class Cauldron : MonoBehaviour {
 		cauldronLevel = 0.0f;
 		cauldronLiquid = Liquid.none;
 		cauldronMats = Materials.none;
-		cauldronPotion = cauldronPotion.none;
+		cauldronPotion = Potion.none;
 	}
 
 	//Fill the cauldron is liquid
